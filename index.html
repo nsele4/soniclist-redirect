@@ -6,10 +6,10 @@
   <script>
     window.onload = function () {
       const params = new URLSearchParams(window.location.search);
-      const type = params.get("type");   // e.g. "event", "track", "artist", "recovery"
-      const id = params.get("id");       // e.g. "123"
+      const type = params.get("type");   
+      const id = params.get("id");       
 
-      // Handle deep links into the app
+      // Redirect to app
       if (type && id) {
         window.location.href = `soniclist://open?type=${type}&id=${id}`;
       }
@@ -17,6 +17,10 @@
   </script>
 </head>
 <body>
-  <p>Opening SonicList... If nothing happens, please open the app manually.</p>
+  <p>Opening SonicList... If nothing happens, please open the app manually or install it:</p>
+  <ul>
+    <li><a href="https://play.google.com/store/apps/details?id=com.soniclist.app">Android Play Store</a></li>
+    <li><a href="https://apps.apple.com/app/idYOUR_APP_ID">iOS App Store</a></li>
+  </ul>
 </body>
 </html>
