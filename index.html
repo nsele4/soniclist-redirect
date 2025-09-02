@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>SonicList Redirect</title>
+  <script>
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const type = params.get("type");   // e.g. "event", "track", "artist", "recovery"
+      const id = params.get("id");       // e.g. "123"
+
+      // Handle deep links into the app
+      if (type && id) {
+        window.location.href = `soniclist://open?type=${type}&id=${id}`;
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Opening SonicList... If nothing happens, please open the app manually.</p>
+</body>
+</html>
